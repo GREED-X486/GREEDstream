@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AniStream — Watch Anime Free</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">🔥 New episodes drop every week — Watch Free, No Sign-up Required</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">ANISTREAM</a>
+  <ul class="nav-links">
+    <li><a href="#trending">Trending</a></li>
+    <li><a href="#popular">Popular</a></li>
+    <li><a href="#all-anime">Browse</a></li>
+    <li><a href="#">Movies</a></li>
+    <li><a href="#">New Season</a></li>
+  </ul>
+  <div class="nav-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="search-input" placeholder="Search anime...">
+  </div>
+  <button class="menu-btn" onclick="toggleMenu()">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+      Live &amp; Streaming Now
+    </div>
+    <h1>Watch <span>Anime</span><br>Your Way</h1>
+    <p>Explore 100+ anime series with HD trailers, stunning artwork, and zero interruptions. From classics to the latest season drops.</p>
+    <div class="hero-actions">
+      <a href="#trending" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Start Watching
+      </a>
+      <a href="#all-anime" class="btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Browse All
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">100+</div><div class="stat-label">Anime Series</div></div>
+      <div class="stat"><div class="stat-num">4K</div><div class="stat-label">HD Quality</div></div>
+      <div class="stat"><div class="stat-num">Free</div><div class="stat-label">No Sign-up</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<div id="featured-wrap"></div>
+
+<!-- TRENDING -->
+<section class="section" id="trending">
+  <div class="section-header">
+    <h2 class="section-title">🔥 <span>Trending</span> Now</h2>
+    <a href="#all-anime" class="see-all">View all <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+  </div>
+  <div class="genre-tabs" id="genre-tabs"></div>
+  <div id="trending-grid" class="scroll-row"></div>
+</section>
+
+<!-- TOP RATED -->
+<section class="section" id="popular">
+  <div class="section-header">
+    <h2 class="section-title">⭐ <span>Top</span> Rated</h2>
+    <a href="#all-anime" class="see-all">View all <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+  </div>
+  <div id="toprated-grid" class="scroll-row"></div>
+</section>
+
+<!-- ALL ANIME -->
+<section class="section" id="all-anime">
+  <div class="section-header">
+    <h2 class="section-title">📺 <span>Browse</span> All Anime</h2>
+    <span id="anime-count" style="font-size:.875rem;color:var(--text3)"></span>
+  </div>
+  <div id="all-loading" class="loading"><div class="spinner"></div><span>Fetching anime data...</span></div>
+  <div id="all-grid"></div>
+  <div class="pagination" id="pagination"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">ANISTREAM</div>
+      <p class="footer-desc">Your ultimate destination for anime streaming. Watch trailers, explore series, and discover your next favorite show.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Browse</h4>
+      <ul>
+        <li><a href="#trending">Trending</a></li>
+        <li><a href="#popular">Top Rated</a></li>
+        <li><a href="#all-anime">All Anime</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">New Season</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Genres</h4>
+      <ul>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Romance</a></li>
+        <li><a href="#">Fantasy</a></li>
+        <li><a href="#">Horror</a></li>
+        <li><a href="#">Sci-Fi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 AniStream. Data from MyAnimeList via Jikan API.</span>
+    <div class="social-links">
+      <a href="#" title="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.735l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25z"/></svg></a>
+      <a href="#" title="Discord"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal(null,true)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-player" id="modal-player"></div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l8 8h-5v8H9v-8H4z"/></svg>
+</button>
+ 
+
+<script src="app.js"></script>
+</body>
+</html>
